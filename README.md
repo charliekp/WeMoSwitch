@@ -1,8 +1,7 @@
 Auto power cycle cable modem on disconnect batch file.
 
 ---------------------------------------------------------------------------------------------------------------------
-Just the batch file that Jerry didn't include in his download of the stuff for the 'auto power cycle cable modem
-on disconnect' project.
+Just the script that Jerry didn't include in his download of the stuff for his WeMo switch project to turn his modem off when it hangs.
 
 All credit goes to Barnacules Nerdgasm, I did not create this I merely typed it up.
 
