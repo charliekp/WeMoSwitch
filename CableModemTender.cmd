@@ -29,7 +29,7 @@ IF /I ^"%_SWITCH%^"==^"^" (
 
 :LOOP
 CALL :PING %_TARGET%
-IF "%ERRORLEVEL%" NEQ "O" (
+IF "%ERRORLEVEL%" NEQ "0" (
  @ECHO [%date% %time%] Connection dropped, resetting cable modem
  CALL :RESET
 ) ELSE (
@@ -44,9 +44,9 @@ PING -4 %1 > NUL
 EXIT /B %errorlevel%
 
 :RESET
-@ECHO [%date% %time%] Sending 'off' comand to %_SWITCH%
+@ECHO [%date% %time%] Sending 'off' command to %_SWITCH%
 WeMo.exe /device %_SWITCH% /action off > NUL
-IF "%ERRORLEVEL%" NEQ "O" (
+IF "%ERRORLEVEL%" NEQ "0" (
   @ECHO {%date% %time%] Failed to send 'off' command to switch
   EXIT /B 1
 )
@@ -54,7 +54,7 @@ IF "%ERRORLEVEL%" NEQ "O" (
 TIMEOUT 30 > NUL
 @ECHO [%date% %time%] Sending 'On command to %_SWITCH%
 WeMo.exe /device %_SWITCH% /action on > NUL
-IF "%ERRORLEVEL%" NEQ "O" (
+IF "%ERRORLEVEL%" NEQ "0" (
   @echo [%date% %time%] Failed to send 'On' command to switch
   EXIT /B 1
 )
